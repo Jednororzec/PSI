@@ -27,12 +27,35 @@ class Osoba:
         nazwisko1=nazwisko[::-1]
         print(f'odwrocone imie: '+ imie1 + ' ' +nazwisko1)
 
+#zad6
+    def podzielListe(self):
+        lista=[]
+        lista2=[]
+        #wypelnienie listy pierwszej
+        for i in range(10):
+            lista.append(i)
+        print(lista)
+        #dodtanie polowy listy do lista2
+        for j in range(5, 10):
+            lista2.append(lista[j])
+
+        sObject=slice(0,5,1)
+        lista1=lista[sObject]
+        #for k in range(5, 9):
+         #   lista.remove(lista[k])
+        print(lista1)
+        print(lista2)
+
+
+
+
 
 #wywolanie zad2
 test=Osoba(imie, nazwisko, tekst)
 test.ileLiter()
 # zad5
 test.odwroc()
+test.podzielListe()
 
 
 
