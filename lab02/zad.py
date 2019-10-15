@@ -32,7 +32,7 @@ class Osoba:
         lista=[]
         lista2=[]
         #wypelnienie listy pierwszej
-        for i in range(10):
+        for i in range(1,11):
             lista.append(i)
         print(lista)
         #dodtanie polowy listy do lista2
@@ -45,6 +45,17 @@ class Osoba:
          #   lista.remove(lista[k])
         print(lista1)
         print(lista2)
+        #zad7
+        lista3=lista1 +lista2
+        print(lista3)
+
+
+
+
+
+
+
+
 
 
 
@@ -55,6 +66,7 @@ test=Osoba(imie, nazwisko, tekst)
 test.ileLiter()
 # zad5
 test.odwroc()
+#zad 6, 7
 test.podzielListe()
 
 
