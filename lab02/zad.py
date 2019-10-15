@@ -49,7 +49,17 @@ class Osoba:
         lista3=lista1 +lista2
         print(lista3)
 
+#zad11
+    def wypisz(self):
+        x=range(1,10)
+        for n in x:
+            print(n)
 
+#zad11
+    def wypisz2(self):
+        y = range(100,19,-5)
+        for m in y:
+            print(m)
 
 
 
@@ -63,11 +73,13 @@ class Osoba:
 
 #wywolanie zad2
 test=Osoba(imie, nazwisko, tekst)
-test.ileLiter()
+#test.ileLiter()
 # zad5
-test.odwroc()
+#test.odwroc()
 #zad 6, 7
-test.podzielListe()
+#test.podzielListe()
+#test.wypisz()
+test.wypisz2()
 
 
 
