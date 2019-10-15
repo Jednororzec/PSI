@@ -1,7 +1,7 @@
 #zad1
 tekst = 'Do czego tego użyć? Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie” po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu tekstu i wpisanie w internetowej wyszukiwarce ‘lorem ipsum’ spowoduje znalezienie bardzo wielu stron, które wciąż są w budowie. Wiele wersji tekstu ewoluowało i zmieniało się przez lata, czasem przez przypadek, czasem specjalnie (humorystyczne wstawki itd).'
-imie='Marta'
-nazwisko='Rozmyslowicz'
+imie='Marta '
+nazwisko='Rozmyslowicz '
 
 class Osoba:
 
@@ -25,7 +25,8 @@ class Osoba:
     def odwroc(self):
         imie1=imie[::-1]
         nazwisko1=nazwisko[::-1]
-        print(f'odwrocone imie: '+ imie1 + ' ' +nazwisko1)
+        personalia= imie1 + nazwisko1
+        print(f'odwrocone imie: '+ personalia.upper())
 
 #zad6
     def podzielListe(self):
@@ -64,22 +65,15 @@ class Osoba:
 
 
 
-
-
-
-
-
-
-
 #wywolanie zad2
 test=Osoba(imie, nazwisko, tekst)
 #test.ileLiter()
 # zad5
-#test.odwroc()
+test.odwroc()
 #zad 6, 7
 #test.podzielListe()
 #test.wypisz()
-test.wypisz2()
+#test.wypisz2()
 
 
 
