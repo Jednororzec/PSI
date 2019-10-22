@@ -1,0 +1,5 @@
+print('{4} {0} {1} {2} {5} {3}'.format('a', 'r','t','k','B','e'))
+print('{:_^8}'.format('Bartek'))
+print('{:*<8}'.format('Bartek'))
+print('{:*^8d}'.format(11))
+print('{:09.3f}'.format(8.874654687967))
