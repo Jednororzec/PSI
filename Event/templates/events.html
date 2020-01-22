@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+    <!-- Etykieta strony -->
+{% block site_title %}
+    <h4>
+        Twoje ankiety
+    </h4>
+{% endblock %}
+    <!-- Zawartość strony -->
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <!-- Przycisk tworzenia nowej ankiety -->
+            <a href="" class="btn btn-primary">Utwórz nową</a>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Lista Twoich ankiet
+            </h3>
+            <!-- Jeżeli istnieją jakieś ankiety, wyświetlamy listę -->
+            {% if events %}
+            <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Opis</th>
+                      <th class="text-right" scope="col">Operacje</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Lista ankiet -->
+                    {% for event in events %}
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}}</th>
+                      <td>{{ event.name }}</td>
+                      <td><small>{{ event.description }}</small></td>
+                      <td class="text-right"><a href="" class="btn btn-success btn-sm">Edytuj</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+              </table>
+            </div>
+            <!-- W przeciwnym wypadku informujemy użytkownika o braku ankiet -->
+            {% else %}
+            <p class="text-center">
+                <small>Obecnie nie posiadasz żadnych ankiet</small>
+            </p>
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+{% endblock %}
