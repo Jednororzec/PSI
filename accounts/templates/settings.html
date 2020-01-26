@@ -1,16 +1,13 @@
 {% extends 'core/base.html' %}{% load static %}
-    <!-- Etykieta strony -->
 {% block site_title %}
     <h4>
         Ustawienia konta
     </h4>
 {% endblock %}
-    <!-- Zawartość strony -->
 {% block content %}
     <div class="row">
         <div class="col-md-12">
             <p class="padding-top-10">
-                <!-- Podstawowe dane użytkownika -->
                 <strong>Imię: </strong>{{ user.first_name }}
                 <br />
                 <strong>Nazwisko: </strong>{{ user.last_name }}
@@ -21,7 +18,6 @@
             </p>
         </div>
         <div class="col-md-12 text-right">
-            <!-- Menu ankiety -->
             <button id="userBasicDataEditButton" class="btn btn-info">Zmień dane</button>
             <button id="userPasswordEditButton" class="btn btn-danger">Zmień hasło</button>
         </div>
@@ -29,7 +25,6 @@
     </div>
 
     <div class="row" id="userBasicDataEditRow">
-        <!-- Formularz edycji danych użytkownika -->
         <form class="form-horizontal hidden-form" id="basicDataChangeForm" role="form" method="POST" action="{% url 'change-data' %}">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -41,7 +36,6 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <!-- Wyświetlenie formularza -->
                     {% csrf_token %}
                     {{ basic_data_change_form.as_p }}
                 </div>
@@ -56,7 +50,6 @@
     </div>
 
     <div class="row" id="userPasswordEditRow">
-        <!-- Formularz edycji danych użytkownika -->
         <form class="form-horizontal hidden-form" id="passwordChangeForm" role="form" method="POST" action="{% url 'change-password' %}">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -68,7 +61,6 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <!-- Wyświetlenie formularza -->
                      {% csrf_token %}
                     {{ password_change_form.as_p }}
                 </div>

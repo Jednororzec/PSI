@@ -11,18 +11,14 @@
         Biletomat.com
     </title>
 
-    <!-- Plik CSS - Bootstrap -->
     <link href="{% static 'css/dependencies/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Plik CSS - Aplikacja -->
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
   </head>
 
   <body>
 
     <header>
-
-      <!-- MENU -->
 
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Biletomat.com</a>
@@ -31,8 +27,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-
-            <!-- Niezalogowany użytkownik -->
             {% if not user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>
@@ -42,17 +36,16 @@
               <a class="nav-link" href="{% url 'signup' %}">Utwórz konto</a>
             </li>
             {% else %}
-            <!-- Zalogowany użytkownik -->
             <li class="nav-item">
               <a class="nav-link" href="">Strona główna</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="{ url 'events' }">Wydarzenia</a>
+              <a class="nav-link" href="{% url 'surveys' %}">Wydarzenia</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="url 'bilet'">Kup Bilet</a>
+              <a class="nav-link" href="">Kup Bilet</a>
             </li>
 
             <li class="nav-item">
@@ -67,7 +60,6 @@
           </ul>
           <div class="mt-2 mt-md-0 site-title">
 
-              <!-- Etykieta strony -->
 
               {% block site_title %}
               {% endblock %}
@@ -81,12 +73,10 @@
 
     <main role="main" class="container">
 
-      <!-- Zawartość strony -->
 
       <div class="row">
         <div class="col-sm-12 text-center messages">
 
-            <!-- Powiadomienia -->
 
             {% if messages %}
                 {% for message in messages %}
@@ -106,10 +96,6 @@
 
         </div>
       </div>
-
-
-        <!-- Zawartość strony -->
-
         {% block content %}
         {% endblock %}
 
@@ -120,17 +106,9 @@
         <span class="text-muted">Biletomat.com aplikacja internetowa stworzona w django przez Bartłmiej Borkowski i Marta Rozmysłowicz</span>
       </div>
     </footer>
-
-    <!-- Plik JS - jQuery -->
     <script src="{% static 'js/dependencies/jquery-3.3.1.slim.min.js' %}"></script>
-
-    <!-- Plik JS - Popper -->
     <script src="{% static 'js/dependencies/popper.min.js' %}"></script>
-
-    <!-- Plik JS - Bootstrap -->
     <script src="{% static 'js/dependencies/bootstrap.min.js' %}"></script>
-
-    <!-- Plik JS - Aplikacja -->
     <script src="{% static 'js/custom.js' %}"></script>
   </body>
 </html>

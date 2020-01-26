@@ -1,5 +1,4 @@
-/* Style szablonu "Sticky footer"
--------------------------------------------------- */
+
 html {
   position: relative;
   min-height: 100%;
@@ -29,11 +28,8 @@ code {
   font-size: 80%;
 }
 
-/* Style aplikacji
--------------------------------------------------- */
-
 .site-title h4 {
-    color: #ffffff;
+    color: #a71927;
     font-style: italic;
     padding-top: 4px;
 }
