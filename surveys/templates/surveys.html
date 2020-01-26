@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block site_title %}
+    <h4>
+        Wydarzenia
+    </h4>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a href="{% url 'create-survey' %}" class="btn btn-primary">Utwórz nowe</a>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Lista Twoich Wydarzeń
+            </h3>
+            {% if surveys %}
+            <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Opis</th>
+                      <th class="text-right" scope="col">Operacje</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for survey in surveys %}
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}</th>
+                      <td>{{ survey.name }}</td>
+                      <td><small>{{ survey.description }}</small></td>
+                      <td class="text-right"><a href="" class="btn btn-success btn-sm">Edytuj</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+              </table>
+            </div>
+            {% else %}
+            <p class="text-center">
+                <small>Obecnie nie organizujesz żadnego wydarzenia</small>
+            </p>
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+{% endblock %}

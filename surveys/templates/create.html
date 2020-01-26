@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %} {% load static %}
+{% block site_title %}
+    <h4>
+        Utwórz Wydarzenie
+    </h4>
+{% endblock %}
+{% block content %}
+    <form class="form-horizontal" id="surveyCreationForm" role="form" method="POST" action="{% url 'create-survey' %}">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Utwórz nowe wydarzenie</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                {% csrf_token %}
+                {{ survey_creation_form.as_p }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success" form="surveyCreationForm">Utwórz</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

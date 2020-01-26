@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}{% load static %}
+{% block site_title %}
+    <h4>
+        Wydarzenie nr {{ survey.id }}
+    </h4>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <h3>
+                Link do udostępniania:
+            </h3>
+            <small>
+                <em>
+                </em>
+            </small>
+            <p class="padding-top-bottom-30">
+                <strong>Nazwa Wydarzenia: </strong> {{ survey.name }}
+                <br />
+                <strong>Opis: </strong>
+                <br />
+                <small>
+                    <em>
+                        {{ survey.description }}
+                    </em>
+                </small>
+            </p>
+        </div>
+        <div class="col-md-6 text-right">
+            <button id="surveyEditButton" class="btn btn-success">Edytuj</button>
+            <a href="{% url 'delete-survey' survey.id %}" class="btn btn-danger">Usuń</a>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row" id="surveyEditRow">
+        <form class="form-horizontal hidden-form" id="surveyChangeForm" role="form" method="POST" action="">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h2>Edycja Wydarzenia</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    {% csrf_token %}
+                    {{ survey_edit_form.as_p }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success" form="surveyChangeForm">Zapisz</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
