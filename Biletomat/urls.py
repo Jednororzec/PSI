@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from . import views
-
+from Biletomat.Biletomat import views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -25,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('Event/', include('Event.urls'))
+    path('Event/', include('Event.urls')),
+    path('bilet/', views.panel, name='bilet'),
 ]
